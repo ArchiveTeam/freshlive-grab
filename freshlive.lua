@@ -76,7 +76,7 @@ allowed = function(url, parenturl)
     return true
   end
 
-  if string.match(url, "^https://hayabusa%.io/") then
+  if string.match(url, "^https://hayabusa%.io/.+/thumbnail_images/") then
     return true
   end
 
