@@ -157,7 +157,8 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
     and not string.match(url, "^https?://movie%.freshlive%.tv/.+%.ts")
     and not string.match(url, "^https://hayabusa%.io/") then
     html = read_file(file)
-    if string.match(url, "^https?://movie%.freshlive%.tv/.+%.m3u8") then
+    if string.match(url, "^https?://movie%.freshlive%.tv/.+%.m3u8")
+      and string.match(url, "[%?&]version=") then
       for line in string.gmatch(html, "([^\n]+)") do
         if not string.match(line, "^#") then
           checknewurl(line)
